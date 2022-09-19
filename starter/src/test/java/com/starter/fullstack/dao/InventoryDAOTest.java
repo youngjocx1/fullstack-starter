@@ -50,7 +50,7 @@ public class InventoryDAOTest {
     Assert.assertFalse(actualInventory.isEmpty());
   }
 }
-
+//mycode
 public void createDAOtest() {
     Inventory inventory = new Inventory();
     inventory.setName(NAME);
