@@ -26,6 +26,7 @@ public class InventoryDAOTest {
   private InventoryDAO inventoryDAO;
   private static final String NAME = "Amber";
   private static final String PRODUCT_TYPE = "hops";
+  private static final String TEST_ID = "UnitedTest";
 
   @Before
   public void setup() {
@@ -50,15 +51,19 @@ public class InventoryDAOTest {
     Assert.assertFalse(actualInventory.isEmpty());
   }
   /**
-*Test InventoryDAO method
-*/
-public void createDAOtest() {
+   *Test Create method
+   */
+  public void createDAOtest() {
     Inventory inventory = new Inventory();
-    inventory.setID(null);
+    inventory.setId(TEST_ID);
     inventory.setName(NAME);
     inventory.setProductType(PRODUCT_TYPE);
-    this.InventoryDAO.create(inventory);
-    Assert.assertFalse(actualInventory.isEmpty());
+    Inventory inventory2 = this.inventoryDAO.create(inventory);
+    Assert.assertNotNull(inventory2);
+    Assert.assertNotEquals("correctId", inventory.getId(), inventory2.getId());
+    Assert.assertEquals("correctName", inventory.getName(), inventory2.getName());
+    Assert.assertEquals("correctProuctType", inventory.getProductType(), inventory2.getProductType());
+
   }
 }
 
