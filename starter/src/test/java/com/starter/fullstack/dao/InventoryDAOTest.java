@@ -49,12 +49,16 @@ public class InventoryDAOTest {
     List<Inventory> actualInventory = this.inventoryDAO.findAll();
     Assert.assertFalse(actualInventory.isEmpty());
   }
-}
-//task1
+  /**
+*Test InventoryDAO method
+*/
 public void createDAOtest() {
     Inventory inventory = new Inventory();
+    inventory.setID(null);
     inventory.setName(NAME);
     inventory.setProductType(PRODUCT_TYPE);
     this.InventoryDAO.create(inventory);
     Assert.assertFalse(actualInventory.isEmpty());
   }
+}
+
