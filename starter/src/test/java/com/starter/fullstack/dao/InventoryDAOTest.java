@@ -50,3 +50,11 @@ public class InventoryDAOTest {
     Assert.assertFalse(actualInventory.isEmpty());
   }
 }
+//task1
+public void createDAOtest() {
+    Inventory inventory = new Inventory();
+    inventory.setName(NAME);
+    inventory.setProductType(PRODUCT_TYPE);
+    this.InventoryDAO.create(inventory);
+    Assert.assertFalse(actualInventory.isEmpty());
+  }
